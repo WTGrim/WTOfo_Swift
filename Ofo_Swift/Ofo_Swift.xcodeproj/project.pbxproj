@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D37FB151F74F61B0043963B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D37FB141F74F61B0043963B /* MapKit.framework */; };
+		5D37FB181F74FA090043963B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D37FB161F74FA090043963B /* MoreViewController.swift */; };
 		5DCCADD11F74E76A00792EBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCADD01F74E76A00792EBF /* AppDelegate.swift */; };
 		5DCCADD31F74E76A00792EBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCADD21F74E76A00792EBF /* ViewController.swift */; };
 		5DCCADD61F74E76A00792EBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DCCADD41F74E76A00792EBF /* Main.storyboard */; };
 		5DCCADD81F74E76A00792EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DCCADD71F74E76A00792EBF /* Assets.xcassets */; };
-		5DCCADDB1F74E76A00792EBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DCCADD91F74E76A00792EBF /* LaunchScreen.storyboard */; };
 		5DCCADE61F74E76A00792EBF /* Ofo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCADE51F74E76A00792EBF /* Ofo_SwiftTests.swift */; };
 		5DCCADF11F74E76B00792EBF /* Ofo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCADF01F74E76B00792EBF /* Ofo_SwiftUITests.swift */; };
 /* End PBXBuildFile section */
@@ -34,12 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D37FB141F74F61B0043963B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5D37FB161F74FA090043963B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		5DCCADCD1F74E76A00792EBF /* Ofo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ofo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCCADD01F74E76A00792EBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DCCADD21F74E76A00792EBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5DCCADD51F74E76A00792EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5DCCADD71F74E76A00792EBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5DCCADDA1F74E76A00792EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DCCADDC1F74E76A00792EBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DCCADE11F74E76A00792EBF /* Ofo_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ofo_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCCADE51F74E76A00792EBF /* Ofo_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ofo_SwiftTests.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D37FB151F74F61B0043963B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D37FB131F74F61B0043963B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D37FB141F74F61B0043963B /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5DCCADC41F74E76A00792EBF = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +92,7 @@
 				5DCCADE41F74E76A00792EBF /* Ofo_SwiftTests */,
 				5DCCADEF1F74E76B00792EBF /* Ofo_SwiftUITests */,
 				5DCCADCE1F74E76A00792EBF /* Products */,
+				5D37FB131F74F61B0043963B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +111,9 @@
 			children = (
 				5DCCADD01F74E76A00792EBF /* AppDelegate.swift */,
 				5DCCADD21F74E76A00792EBF /* ViewController.swift */,
+				5D37FB161F74FA090043963B /* MoreViewController.swift */,
 				5DCCADD41F74E76A00792EBF /* Main.storyboard */,
 				5DCCADD71F74E76A00792EBF /* Assets.xcassets */,
-				5DCCADD91F74E76A00792EBF /* LaunchScreen.storyboard */,
 				5DCCADDC1F74E76A00792EBF /* Info.plist */,
 			);
 			path = Ofo_Swift;
@@ -194,6 +206,11 @@
 					5DCCADCC1F74E76A00792EBF = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					5DCCADE01F74E76A00792EBF = {
 						CreatedOnToolsVersion = 9.0;
@@ -232,7 +249,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DCCADDB1F74E76A00792EBF /* LaunchScreen.storyboard in Resources */,
 				5DCCADD81F74E76A00792EBF /* Assets.xcassets in Resources */,
 				5DCCADD61F74E76A00792EBF /* Main.storyboard in Resources */,
 			);
@@ -259,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D37FB181F74FA090043963B /* MoreViewController.swift in Sources */,
 				5DCCADD31F74E76A00792EBF /* ViewController.swift in Sources */,
 				5DCCADD11F74E76A00792EBF /* AppDelegate.swift in Sources */,
 			);
@@ -302,14 +319,6 @@
 				5DCCADD51F74E76A00792EBF /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5DCCADD91F74E76A00792EBF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5DCCADDA1F74E76A00792EBF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
