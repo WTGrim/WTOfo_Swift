@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D37FB151F74F61B0043963B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D37FB141F74F61B0043963B /* MapKit.framework */; };
 		5D37FB181F74FA090043963B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D37FB161F74FA090043963B /* MoreViewController.swift */; };
+		5DC4DE3D1F79EBCA00191AAF /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4DE3C1F79EBCA00191AAF /* MenuController.swift */; };
 		5DCCADD11F74E76A00792EBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCADD01F74E76A00792EBF /* AppDelegate.swift */; };
 		5DCCADD31F74E76A00792EBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCADD21F74E76A00792EBF /* ViewController.swift */; };
 		5DCCADD61F74E76A00792EBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DCCADD41F74E76A00792EBF /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		5D37FB141F74F61B0043963B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5D37FB161F74FA090043963B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		5DC4DE3C1F79EBCA00191AAF /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		5DCCADCD1F74E76A00792EBF /* Ofo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ofo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCCADD01F74E76A00792EBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DCCADD21F74E76A00792EBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				5DCCADD01F74E76A00792EBF /* AppDelegate.swift */,
 				5DCCADD21F74E76A00792EBF /* ViewController.swift */,
 				5D37FB161F74FA090043963B /* MoreViewController.swift */,
+				5DC4DE3C1F79EBCA00191AAF /* MenuController.swift */,
 				5DCCADD41F74E76A00792EBF /* Main.storyboard */,
 				5DCCADD71F74E76A00792EBF /* Assets.xcassets */,
 				5DCCADDC1F74E76A00792EBF /* Info.plist */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC4DE3D1F79EBCA00191AAF /* MenuController.swift in Sources */,
 				5D37FB181F74FA090043963B /* MoreViewController.swift in Sources */,
 				5DCCADD31F74E76A00792EBF /* ViewController.swift in Sources */,
 				5DCCADD11F74E76A00792EBF /* AppDelegate.swift in Sources */,
