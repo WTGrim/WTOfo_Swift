@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,12 +23,20 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xrC-dR-5j7">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWB-GA-fCo">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xrC-dR-5j7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5V4-hB-Dfi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GWB-GA-fCo" secondAttribute="trailing" id="Eiw-ne-DUC"/>
+                            <constraint firstItem="GWB-GA-fCo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GZF-9d-g8R"/>
+                            <constraint firstItem="GWB-GA-fCo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Iv0-Cu-nTc"/>
                             <constraint firstItem="xrC-dR-5j7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Lea-gr-J2b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xrC-dR-5j7" secondAttribute="trailing" id="Lfb-Ct-PmP"/>
+                            <constraint firstItem="GWB-GA-fCo" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="cbH-tQ-qom"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xrC-dR-5j7" secondAttribute="bottom" id="z0v-Hl-nYu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -40,6 +49,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="panelView" destination="GWB-GA-fCo" id="rKA-wH-cql"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

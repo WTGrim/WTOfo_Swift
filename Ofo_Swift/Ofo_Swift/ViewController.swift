@@ -11,6 +11,8 @@ import SWRevealViewController
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var panelView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
