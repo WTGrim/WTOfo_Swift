@@ -17,7 +17,7 @@ class MoreViewController: UIViewController , WKUIDelegate{
         super.viewDidLoad()
         title = "热门活动"
         
-        let url = URL.init(string: "http://m.ofo.so/active.html")!
+        let url = URL(string: "http://m.ofo.so/active.html")!
         let request = URLRequest(url: url as URL)
         webView = WKWebView(frame:CGRect(x:0, y:0, width:self.view.bounds.width, height:self.view.bounds.height))
         webView.uiDelegate = self
@@ -28,6 +28,4 @@ class MoreViewController: UIViewController , WKUIDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
 }
