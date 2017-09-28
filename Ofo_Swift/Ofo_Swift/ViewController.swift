@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import FTIndicator
 
 class ViewController: UIViewController , MAMapViewDelegate, AMapSearchDelegate, AMapNaviWalkManagerDelegate{
 
@@ -181,6 +182,10 @@ extension ViewController{
         minePin.isLockedToScreen = true
         mapView.addAnnotation(minePin)
         mapView.showAnnotations([minePin], animated: true)
+        
+        //搜索
+        searchNear = true
+        searchNearBike()
     }
     
     //用户移动地图，重新搜索
@@ -251,6 +256,16 @@ extension ViewController{
         mapView.add(polyline)
         
         //提示时间和距离
+        let time = walkManager.naviRoute!.routeTime / 60
+        var timeDes = "1分钟以内"
+        if time > 0 {
+            timeDes = time.description + "分钟"
+        }
+        
+        let hintTitle = "步行" + timeDes
+        let hintSubTitle  = "距离" + walkManager.naviRoute!.routeLength.description + "米"
+        FTIndicator.setIndicatorStyle(.dark)
+        FTIndicator.showNotification(with: UIImage(named:"clock_24x24_"), title: hintTitle, message: hintSubTitle)
     }
     
     func walkManager(_ walkManager: AMapNaviWalkManager, onCalculateRouteFailure error: Error) {
