@@ -9,7 +9,7 @@
 import UIKit
 import SWRevealViewController
 
-class ViewController: UIViewController , MAMapViewDelegate, AMapSearchDelegate{
+class ViewController: UIViewController , MAMapViewDelegate, AMapSearchDelegate, AMapNaviWalkManagerDelegate{
 
     //底部控制台
     @IBOutlet weak var panelView: UIView!
@@ -19,16 +19,20 @@ class ViewController: UIViewController , MAMapViewDelegate, AMapSearchDelegate{
     var minePinView:MAPinAnnotationView!
     var searchNear = true
     var currentAnnotations : [MAPointAnnotation] = []
+    var start, end : CLLocationCoordinate2D!
+    var walkManager : AMapNaviWalkManager!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
     }
-    
     
     //定位
     @IBAction func locationClick(_ sender: UIButton) {
         
+        searchNear = true
         searchNearBike()
     }
     
@@ -52,6 +56,9 @@ extension ViewController{
         
         search = AMapSearchAPI()
         search.delegate = self
+        
+        walkManager = AMapNaviWalkManager()
+        walkManager.delegate = self
         
         view.bringSubview(toFront: panelView)
         
@@ -84,13 +91,11 @@ extension ViewController{
     fileprivate func pinAnimation() {
         
         let frame = minePinView.frame
-        UIView.animate(withDuration: 0.6, animations: {
-            self.minePinView.frame = frame.offsetBy(dx: 0, dy: -20)
-
+        minePinView.frame = frame.offsetBy(dx: 0, dy: -20)
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
+            self.minePinView.frame = frame
         }) { (completed) in
-            UIView.animate(withDuration: 0.6, animations: {
-                self.minePinView.frame = frame
-            })
+            
         }
     }
 
@@ -98,7 +103,6 @@ extension ViewController{
 
 //Mark:-相关代理
 extension ViewController{
-    
     
     //poi检索完成后的回调
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
@@ -163,7 +167,7 @@ extension ViewController{
             annotationView?.image = UIImage(named:"HomePage_nearbyBikeRedPacket_33x36_")
         }
         annotationView?.canShowCallout = true
-        annotationView?.animatesDrop = true
+//        annotationView?.animatesDrop = true
         return annotationView
     }
     
@@ -183,11 +187,74 @@ extension ViewController{
     func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
         
         if wasUserAction{
+            mapView.removeOverlays(mapView.overlays)
             minePin.isLockedToScreen = true
             pinAnimation()
             searchCustomLocation(mapView.centerCoordinate)
         }
     }
     
+    //添加地图标注动画
+    func mapView(_ mapView: MAMapView!, didAddAnnotationViews views: [Any]!) {
+        
+        let views = views as! [MAAnnotationView]
+        for view in views {
+            guard view.annotation is MAPointAnnotation else{
+                continue
+            }
+            
+            view.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
+                view.transform = .identity
+            }, completion: { (completed) in
+                
+            })
+        }
+    }
+    
+    //选中标注
+    func mapView(_ mapView: MAMapView!, didSelect view: MAAnnotationView!) {
+        
+        start = minePin.coordinate
+        end  = view.annotation.coordinate
+        
+        let startPoint = AMapNaviPoint.location(withLatitude: CGFloat(start.latitude), longitude: CGFloat(start.longitude))!
+        let endPoint  = AMapNaviPoint.location(withLatitude: CGFloat(end.latitude), longitude: CGFloat(end.longitude))!
+        walkManager.calculateWalkRoute(withStart: [startPoint], end: [endPoint])
+    }
+    
+    //绘制路线
+    func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
+        
+        if overlay is MAPolyline{
+            
+            minePin.isLockedToScreen = false
+            mapView.visibleMapRect = overlay.boundingMapRect
+            let render = MAPolylineRenderer(overlay: overlay)
+            render?.lineWidth = 4.0
+            render?.strokeColor = UIColor.green
+            return render
+        }
+        return nil
+    }
+    
+    //Mark:-AMapNaviWalkViewDelegate 导航代理
+    func walkManager(onCalculateRouteSuccess walkManager: AMapNaviWalkManager) {
+       print("路线规划成功")
+        
+        var cordinates = walkManager.naviRoute!.routeCoordinates!.map {
+            return CLLocationCoordinate2D(latitude: CLLocationDegrees($0.latitude), longitude: CLLocationDegrees($0.longitude))
+        }
+        let polyline = MAPolyline(coordinates: &cordinates, count: UInt(cordinates.count))
+        
+        mapView.removeOverlays(mapView.overlays)
+        mapView.add(polyline)
+        
+        //提示时间和距离
+    }
+    
+    func walkManager(_ walkManager: AMapNaviWalkManager, onCalculateRouteFailure error: Error) {
+        print("路线规划失败",error)
+    }
 }
 
