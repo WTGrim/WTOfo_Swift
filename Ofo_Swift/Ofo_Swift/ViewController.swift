@@ -17,6 +17,8 @@ class ViewController: UIViewController , MAMapViewDelegate, AMapSearchDelegate{
     var search:AMapSearchAPI!
     var minePin:MinePinAnnotation!
     var minePinView:MAPinAnnotationView!
+    var searchNear = true
+    var currentAnnotations : [MAPointAnnotation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +78,21 @@ extension ViewController{
     fileprivate func searchNearBike() {
         searchCustomLocation(mapView.userLocation.coordinate)
     }
+    
+    
+    //大头针动画
+    fileprivate func pinAnimation() {
+        
+        let frame = minePinView.frame
+        UIView.animate(withDuration: 0.6, animations: {
+            self.minePinView.frame = frame.offsetBy(dx: 0, dy: -20)
+
+        }) { (completed) in
+            UIView.animate(withDuration: 0.6, animations: {
+                self.minePinView.frame = frame
+            })
+        }
+    }
 
 }
 
@@ -104,9 +121,14 @@ extension ViewController{
             return annotation
         }
         
+        //先删除当前的annotation
+        mapView.removeAnnotations(currentAnnotations)
+        currentAnnotations = annotations
         mapView.addAnnotations(annotations)
-        mapView.showAnnotations(annotations, animated: true)
-        
+        if searchNear {//第一次搜索 显示地图缩放动画， 其他没有动画
+            mapView.showAnnotations(annotations, animated: true)
+            searchNear = !searchNear
+        }
     }
     
     //自定义大头针
@@ -145,6 +167,8 @@ extension ViewController{
         return annotationView
     }
     
+    
+    //地图初始化完成，设置用户位置大头针
     func mapInitComplete(_ mapView: MAMapView!) {
         
         minePin = MinePinAnnotation()
@@ -153,6 +177,16 @@ extension ViewController{
         minePin.isLockedToScreen = true
         mapView.addAnnotation(minePin)
         mapView.showAnnotations([minePin], animated: true)
+    }
+    
+    //用户移动地图，重新搜索
+    func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
+        
+        if wasUserAction{
+            minePin.isLockedToScreen = true
+            pinAnimation()
+            searchCustomLocation(mapView.centerCoordinate)
+        }
     }
     
 }
