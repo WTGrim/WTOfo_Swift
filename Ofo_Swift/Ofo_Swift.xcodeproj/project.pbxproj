@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D15D8451F7E3563003C43F2 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D15D8441F7E3563003C43F2 /* ColorHelper.swift */; };
 		5D37FB181F74FA090043963B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D37FB161F74FA090043963B /* MoreViewController.swift */; };
 		5D58045A1F7DF29E00A60C3D /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5804591F7DF29E00A60C3D /* ScanViewController.swift */; };
 		5DB5ED4E1F7CE404002BD460 /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5ED4D1F7CE404002BD460 /* ControlPanelView.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		029EF48B916B438F53D2BFC6 /* Pods_Ofo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ofo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C583C484524BF8929232131 /* Pods-Ofo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ofo_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ofo_Swift/Pods-Ofo_Swift.release.xcconfig"; sourceTree = "<group>"; };
+		5D15D8441F7E3563003C43F2 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		5D37FB161F74FA090043963B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		5D5804591F7DF29E00A60C3D /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		5DB5ED4D1F7CE404002BD460 /* ControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				5DBB0C901F7BA5E10016A240 /* MinePinAnnotation.swift */,
 				5DB5ED4D1F7CE404002BD460 /* ControlPanelView.swift */,
 				5DB5ED4F1F7CF9DB002BD460 /* ScanButton.swift */,
+				5D15D8441F7E3563003C43F2 /* ColorHelper.swift */,
 				5DCCADD41F74E76A00792EBF /* Main.storyboard */,
 				5DCCADD71F74E76A00792EBF /* Assets.xcassets */,
 				5DCCADDC1F74E76A00792EBF /* Info.plist */,
@@ -374,6 +377,7 @@
 				5D37FB181F74FA090043963B /* MoreViewController.swift in Sources */,
 				5DCCADD31F74E76A00792EBF /* ViewController.swift in Sources */,
 				5DB5ED501F7CF9DB002BD460 /* ScanButton.swift in Sources */,
+				5D15D8451F7E3563003C43F2 /* ColorHelper.swift in Sources */,
 				5DB5ED4E1F7CE404002BD460 /* ControlPanelView.swift in Sources */,
 				5DBB0C911F7BA5E10016A240 /* MinePinAnnotation.swift in Sources */,
 				5DCCADD11F74E76A00792EBF /* AppDelegate.swift in Sources */,
