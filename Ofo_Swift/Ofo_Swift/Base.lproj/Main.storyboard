@@ -54,16 +54,36 @@
                                             <constraint firstItem="1t4-1H-Pq4" firstAttribute="top" secondItem="zYJ-Lp-Usb" secondAttribute="bottom" constant="10" id="xMQ-5V-fXl"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2up-Fs-djN" customClass="ScanButton" customModule="Ofo_Swift" customModuleProvider="target">
+                                        <rect key="frame" x="128" y="40" width="120" height="120"/>
+                                        <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="fZI-oI-HMc"/>
+                                            <constraint firstAttribute="width" secondItem="2up-Fs-djN" secondAttribute="height" id="orQ-dz-Kfn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="扫码用车" image="scan_icon_21x21_">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="60"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="2up-Fs-djN" firstAttribute="centerX" secondItem="GWB-GA-fCo" secondAttribute="centerX" id="1Bd-Kj-nFc"/>
                                     <constraint firstItem="o9n-9Z-pXP" firstAttribute="height" secondItem="GWB-GA-fCo" secondAttribute="height" multiplier="0.7" id="HHB-P2-b83"/>
                                     <constraint firstAttribute="trailing" secondItem="o9n-9Z-pXP" secondAttribute="trailing" id="LVI-nW-5lf"/>
+                                    <constraint firstItem="2up-Fs-djN" firstAttribute="centerY" secondItem="GWB-GA-fCo" secondAttribute="centerY" id="rjm-dN-xD6"/>
                                     <constraint firstAttribute="bottom" secondItem="o9n-9Z-pXP" secondAttribute="bottom" id="u1p-r2-vxl"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GWB-GA-fCo" secondAttribute="trailing" id="Eiw-ne-DUC"/>
                             <constraint firstItem="GWB-GA-fCo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GZF-9d-g8R"/>
@@ -81,7 +101,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="functionView" destination="o9n-9Z-pXP" id="clf-db-mhb"/>
                         <outlet property="panelView" destination="GWB-GA-fCo" id="rKA-wH-cql"/>
+                        <outlet property="scanBtn" destination="2up-Fs-djN" id="FgA-DX-VjA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -125,7 +147,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="etc-QN-4SI" id="WTv-i4-fIM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="p6s-Va-Zz9">
@@ -197,7 +219,7 @@
                                         <rect key="frame" x="0.0" y="150" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u32-Bj-Ajh" id="75r-Ed-F5F">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_slide_trip2_22x22_" translatesAutoresizingMaskIntoConstraints="NO" id="pYp-0N-t7k">
@@ -226,7 +248,7 @@
                                         <rect key="frame" x="0.0" y="194" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iok-sr-ykU" id="Qv0-vp-gtP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_slide_wallet2_22x22_" translatesAutoresizingMaskIntoConstraints="NO" id="GUY-QX-QYm">
@@ -255,7 +277,7 @@
                                         <rect key="frame" x="0.0" y="238" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="27q-i3-Wq2" id="EHp-by-KpH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_slide_invite2_22x22_" translatesAutoresizingMaskIntoConstraints="NO" id="6RZ-eu-sFB">
@@ -284,7 +306,7 @@
                                         <rect key="frame" x="0.0" y="282" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gkz-jj-1ck" id="GJp-bK-uds">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_slide_coupon2_22x22_" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-Gc-sJ4">
@@ -313,7 +335,7 @@
                                         <rect key="frame" x="0.0" y="326" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bgz-iH-XW3" id="gIw-8e-qsa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_slide_usage_guild2_22x22_" translatesAutoresizingMaskIntoConstraints="NO" id="sbR-2a-Jjc">
@@ -435,6 +457,7 @@
         <image name="icon_slide_wallet2_22x22_" width="22" height="22"/>
         <image name="leftBottomImage_40x40_" width="40" height="40"/>
         <image name="rightBottomImage_40x40_" width="40" height="40"/>
+        <image name="scan_icon_21x21_" width="21" height="21"/>
         <image name="user_center_icon_25x25_" width="25" height="25"/>
     </resources>
 </document>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D37FB181F74FA090043963B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D37FB161F74FA090043963B /* MoreViewController.swift */; };
+		5DB5ED4E1F7CE404002BD460 /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5ED4D1F7CE404002BD460 /* ControlPanelView.swift */; };
+		5DB5ED501F7CF9DB002BD460 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5ED4F1F7CF9DB002BD460 /* ScanButton.swift */; };
 		5DBB0C911F7BA5E10016A240 /* MinePinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB0C901F7BA5E10016A240 /* MinePinAnnotation.swift */; };
 		5DC4DE3D1F79EBCA00191AAF /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4DE3C1F79EBCA00191AAF /* MenuController.swift */; };
 		5DCCADD11F74E76A00792EBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCADD01F74E76A00792EBF /* AppDelegate.swift */; };
@@ -40,6 +42,8 @@
 		029EF48B916B438F53D2BFC6 /* Pods_Ofo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ofo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C583C484524BF8929232131 /* Pods-Ofo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ofo_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ofo_Swift/Pods-Ofo_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		5D37FB161F74FA090043963B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		5DB5ED4D1F7CE404002BD460 /* ControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelView.swift; sourceTree = "<group>"; };
+		5DB5ED4F1F7CF9DB002BD460 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
 		5DBB0C8C1F7B3B4F0016A240 /* Ofo_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ofo_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		5DBB0C901F7BA5E10016A240 /* MinePinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinePinAnnotation.swift; sourceTree = "<group>"; };
 		5DC4DE3C1F79EBCA00191AAF /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				5D37FB161F74FA090043963B /* MoreViewController.swift */,
 				5DC4DE3C1F79EBCA00191AAF /* MenuController.swift */,
 				5DBB0C901F7BA5E10016A240 /* MinePinAnnotation.swift */,
+				5DB5ED4D1F7CE404002BD460 /* ControlPanelView.swift */,
+				5DB5ED4F1F7CF9DB002BD460 /* ScanButton.swift */,
 				5DCCADD41F74E76A00792EBF /* Main.storyboard */,
 				5DCCADD71F74E76A00792EBF /* Assets.xcassets */,
 				5DCCADDC1F74E76A00792EBF /* Info.plist */,
@@ -304,11 +310,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Ofo_Swift/Pods-Ofo_Swift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FTIndicator/FTIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/swiftScan/swiftScan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FTIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/swiftScan.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -362,6 +370,8 @@
 				5DC4DE3D1F79EBCA00191AAF /* MenuController.swift in Sources */,
 				5D37FB181F74FA090043963B /* MoreViewController.swift in Sources */,
 				5DCCADD31F74E76A00792EBF /* ViewController.swift in Sources */,
+				5DB5ED501F7CF9DB002BD460 /* ScanButton.swift in Sources */,
+				5DB5ED4E1F7CE404002BD460 /* ControlPanelView.swift in Sources */,
 				5DBB0C911F7BA5E10016A240 /* MinePinAnnotation.swift in Sources */,
 				5DCCADD11F74E76A00792EBF /* AppDelegate.swift in Sources */,
 			);

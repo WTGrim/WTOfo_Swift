@@ -13,7 +13,10 @@ import FTIndicator
 class ViewController: UIViewController , MAMapViewDelegate, AMapSearchDelegate, AMapNaviWalkManagerDelegate{
 
     //底部控制台
+    @IBOutlet weak var functionView: UIView!
     @IBOutlet weak var panelView: UIView!
+    @IBOutlet weak var scanBtn: ScanButton!
+    var controlPanelLayer:CAShapeLayer!
     var mapView:MAMapView!
     var search:AMapSearchAPI!
     var minePin:MinePinAnnotation!
@@ -22,7 +25,6 @@ class ViewController: UIViewController , MAMapViewDelegate, AMapSearchDelegate, 
     var currentAnnotations : [MAPointAnnotation] = []
     var start, end : CLLocationCoordinate2D!
     var walkManager : AMapNaviWalkManager!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +71,35 @@ extension ViewController{
             navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
             view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
+        
+        //绘制控制面板
+        controlPanelLayer = CAShapeLayer()
+        controlPanelLayer.lineWidth = 1.0
+        controlPanelLayer.fillColor = UIColor.white.cgColor
+        
+        let color = UIColor.white
+        color.set()
+        let path = UIBezierPath()
+        path.lineWidth = 1.0
+        path.lineCapStyle = .round
+        path.lineJoinStyle = .round
+        path.move(to: CGPoint(x: 0, y: panelView.bounds.height))
+        path.addLine(to: CGPoint(x: 0, y: 40))
+        path.addQuadCurve(to: CGPoint(x:panelView.bounds.width, y:40), controlPoint: CGPoint(x:panelView.bounds.width / 2.0, y:-40))
+        path.addLine(to: CGPoint(x: panelView.bounds.width, y: panelView.bounds.height))
+        path.close()
+        path.fill()
+        
+        controlPanelLayer.path = path.cgPath
+        controlPanelLayer.shadowOffset = CGSize(width: 0, height: -5)
+        controlPanelLayer.shadowOpacity = 0.1
+        controlPanelLayer.shadowColor = UIColor.black.cgColor
+        panelView.layer.insertSublayer(controlPanelLayer, below: functionView.layer)
+        
+        scanBtn.addTarget(self, action: #selector(scanClick), for: .touchUpInside)
+        scanBtn.layer.shadowOffset = CGSize(width: 4, height: 10)
+        scanBtn.layer.shadowColor = UIColor(red: 217/255.0, green: 197/255.0, blue: 47/255.0, alpha: 1).cgColor
+        scanBtn.layer.shadowOpacity = 0.2
     }
     
     //用餐馆模拟成小黄车
@@ -98,6 +129,12 @@ extension ViewController{
         }) { (completed) in
             
         }
+    }
+    
+    @objc fileprivate func scanClick(){
+        
+        print("点击扫描")
+        
     }
 
 }
