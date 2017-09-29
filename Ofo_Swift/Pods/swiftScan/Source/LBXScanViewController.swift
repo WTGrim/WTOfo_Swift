@@ -30,7 +30,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
    open var isOpenInterestRect = false
     
     //识别码的类型
-    var arrayCodeType:[String]?
+    var arrayCodeType:[AVMetadataObject.ObjectType]?
     
     //是否需要识别后的当前图像
     var isNeedCodeImage = false
@@ -68,7 +68,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         
     }
     
-    open func startScan()
+    @objc open func startScan()
     {
         if(!LBXPermissions .isGetCameraPermission())
         {
@@ -91,7 +91,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
             //指定识别几种码
             if arrayCodeType == nil
             {
-                arrayCodeType = [AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeCode128Code]
+                arrayCodeType = [AVMetadataObject.ObjectType(rawValue: AVMetadataObject.ObjectType.qr.rawValue),AVMetadataObject.ObjectType(rawValue: AVMetadataObject.ObjectType.ean13.rawValue),AVMetadataObject.ObjectType(rawValue: AVMetadataObject.ObjectType.code128.rawValue)]
             }
             
             scanObj = LBXScanWrapper(videoPreView: self.view,objType:arrayCodeType!, isCaptureImg: isNeedCodeImage,cropRect:cropRect, success: { [weak self] (arrayResult) -> Void in
@@ -156,11 +156,11 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     
     override open func viewWillDisappear(_ animated: Bool) {
         
-        NSObject.cancelPreviousPerformRequests(withTarget: self)
-        
-        qRScanView?.stopScanAnimation()
-        
-        scanObj?.stop()
+//        NSObject.cancelPreviousPerformRequests(withTarget: self)
+//
+//        qRScanView?.stopScanAnimation()
+//
+//        scanObj?.stop()
     }
     
     open func openPhotoAlbum()

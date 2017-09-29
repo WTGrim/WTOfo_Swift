@@ -16,6 +16,7 @@ class ViewController: UIViewController , MAMapViewDelegate, AMapSearchDelegate, 
     @IBOutlet weak var functionView: UIView!
     @IBOutlet weak var panelView: UIView!
     @IBOutlet weak var scanBtn: ScanButton!
+    
     var controlPanelLayer:CAShapeLayer!
     var mapView:MAMapView!
     var search:AMapSearchAPI!

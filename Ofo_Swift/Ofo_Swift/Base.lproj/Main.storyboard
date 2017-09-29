@@ -70,6 +70,9 @@
                                                 <integer key="value" value="60"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="zwh-op-kSY" kind="show" id="xtR-2R-NgO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -109,6 +112,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="469.60000000000002" y="154.27286356821591"/>
+        </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="fiu-0R-Jak">
+            <objects>
+                <viewController id="zwh-op-kSY" customClass="ScanViewController" customModule="Ofo_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9RK-NT-fIO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-mI-jeD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowBikeWhiteTitle_128x27_" translatesAutoresizingMaskIntoConstraints="NO" id="Gx5-Dw-eJU">
+                                        <rect key="frame" x="10" y="26.5" width="128" height="27"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVc-kP-at1">
+                                        <rect key="frame" x="335" y="15" width="30" height="30"/>
+                                        <state key="normal" image="popview_close_icon_30x30_"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Gx5-Dw-eJU" firstAttribute="centerY" secondItem="Gep-mI-jeD" secondAttribute="centerY" id="52G-2w-s91"/>
+                                    <constraint firstAttribute="height" constant="80" id="FQm-gp-ikA"/>
+                                    <constraint firstAttribute="trailing" secondItem="hVc-kP-at1" secondAttribute="trailing" constant="10" id="Jgx-ZU-no8"/>
+                                    <constraint firstItem="hVc-kP-at1" firstAttribute="top" secondItem="Gep-mI-jeD" secondAttribute="top" constant="15" id="dDV-SC-MLr"/>
+                                    <constraint firstItem="Gx5-Dw-eJU" firstAttribute="leading" secondItem="Gep-mI-jeD" secondAttribute="leading" constant="10" id="uxB-3I-5Jq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFY-gf-Ybd">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sf-Jb-20d">
+                                        <rect key="frame" x="50" y="39" width="15" height="23"/>
+                                        <state key="normal" image="inputBlikeNo_15x23_"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5O-ZP-ReI">
+                                        <rect key="frame" x="310" y="39" width="15" height="23"/>
+                                        <state key="normal" image="btn_unenableTorch_w_15x23_"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="N5O-ZP-ReI" firstAttribute="centerY" secondItem="eFY-gf-Ybd" secondAttribute="centerY" id="203-5Z-JyI"/>
+                                    <constraint firstItem="7Sf-Jb-20d" firstAttribute="centerY" secondItem="eFY-gf-Ybd" secondAttribute="centerY" id="6GH-YZ-vvo"/>
+                                    <constraint firstAttribute="height" constant="100" id="7lV-BW-q4B"/>
+                                    <constraint firstItem="7Sf-Jb-20d" firstAttribute="leading" secondItem="eFY-gf-Ybd" secondAttribute="leading" constant="50" id="BIb-FT-dsZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="N5O-ZP-ReI" secondAttribute="trailing" constant="50" id="Wr3-sq-4AX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gep-mI-jeD" firstAttribute="leading" secondItem="uhe-DY-wMm" secondAttribute="leading" id="3Eb-ld-kxh"/>
+                            <constraint firstItem="eFY-gf-Ybd" firstAttribute="leading" secondItem="uhe-DY-wMm" secondAttribute="leading" id="BEj-04-9fS"/>
+                            <constraint firstItem="Gep-mI-jeD" firstAttribute="top" secondItem="uhe-DY-wMm" secondAttribute="top" id="MFW-YJ-sL9"/>
+                            <constraint firstItem="uhe-DY-wMm" firstAttribute="bottom" secondItem="eFY-gf-Ybd" secondAttribute="bottom" id="bZR-sF-kLh"/>
+                            <constraint firstItem="eFY-gf-Ybd" firstAttribute="trailing" secondItem="uhe-DY-wMm" secondAttribute="trailing" id="lcA-bD-q9P"/>
+                            <constraint firstItem="uhe-DY-wMm" firstAttribute="trailing" secondItem="Gep-mI-jeD" secondAttribute="trailing" id="vAd-qM-hwG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uhe-DY-wMm"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCg-DE-jfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="878"/>
         </scene>
         <!--More View Controller-->
         <scene sceneID="gLY-hQ-kZX">
@@ -448,6 +517,7 @@
     <resources>
         <image name="UserInfo_defaultIcon_80x80_" width="80" height="80"/>
         <image name="about_pic_375x360_" width="375" height="360"/>
+        <image name="btn_unenableTorch_w_15x23_" width="15" height="23"/>
         <image name="gift_icon_22x22_" width="22" height="22"/>
         <image name="icon_slide_certify_30x30_" width="30" height="30"/>
         <image name="icon_slide_coupon2_22x22_" width="22" height="22"/>
@@ -455,9 +525,12 @@
         <image name="icon_slide_trip2_22x22_" width="22" height="22"/>
         <image name="icon_slide_usage_guild2_22x22_" width="22" height="22"/>
         <image name="icon_slide_wallet2_22x22_" width="22" height="22"/>
+        <image name="inputBlikeNo_15x23_" width="15" height="23"/>
         <image name="leftBottomImage_40x40_" width="40" height="40"/>
+        <image name="popview_close_icon_30x30_" width="30" height="30"/>
         <image name="rightBottomImage_40x40_" width="40" height="40"/>
         <image name="scan_icon_21x21_" width="21" height="21"/>
         <image name="user_center_icon_25x25_" width="25" height="25"/>
+        <image name="yellowBikeWhiteTitle_128x27_" width="128" height="27"/>
     </resources>
 </document>

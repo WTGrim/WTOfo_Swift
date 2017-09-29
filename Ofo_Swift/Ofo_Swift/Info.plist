@@ -35,6 +35,8 @@
 	<string>ofo需要使用您的位置查找附近车辆</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>ofo需要使用您的位置查找附近车辆</string>
+	<key>NSCameraUsageDescription</key>
+	<string>ofo需要使用您的相机扫描车辆二维码</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
